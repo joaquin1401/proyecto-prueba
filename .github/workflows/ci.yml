@@ -1,7 +1,9 @@
-# .github/workflows/ci.yml
 name: Test Python with pytest
 
 on:
+  workflow_dispatch:        # Permite ejecutar manualmente desde GitHub
+  schedule:
+    - cron: '0 6 * * *'      # Ejecutar todos los días a las 06:00 UTC
   push:
     branches: [ main ]
   pull_request:
@@ -18,7 +20,7 @@ jobs:
       - name: Configurar Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: '3.12'  # Cambia a la versión que uses
 
       - name: Instalar dependencias
         run: |
@@ -27,3 +29,4 @@ jobs:
 
       - name: Ejecutar tests con pytest
         run: pytest
+
