@@ -30,8 +30,6 @@ jobs:
           pip install -r requirements.txt
 
       - name: Ejecutar tests con pytest
-        run: |
-          pytest
-          pytest > reporte.txt
+        run: pytest
 
 
