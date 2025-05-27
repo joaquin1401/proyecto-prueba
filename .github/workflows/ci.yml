@@ -3,7 +3,7 @@ name: Test Python with pytest
 on:
   workflow_dispatch:        # Permite ejecutar manualmente desde github
   schedule:
-    - cron: '22 20 * * *'      # Ejecutar todos los dias horario UTC (-3 en Argentina)
+    - cron: '30 20 * * *'      # Ejecutar todos los dias horario UTC (-3 en Argentina)
     # (minuto) (hora) (dia del mes) (mes) (dia de la semana)
   push:
     branches: [ main ]
